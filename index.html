@@ -81,7 +81,7 @@
   <body>
     <form id="searchForm">
       <input type="text" id="term" />
-      <button type="submit">Search articles</button>
+      <button type="submit">Kerko artikuj</button>
       <img src="./img/loading.gif" class="loading">
     </form>
 
@@ -95,7 +95,7 @@
         const searchTerm = $("#term").val();
 
         if (searchTerm === "") {
-          alert("Enter a search term");
+          alert("Shkruaj dicka.");
         } else {
           $(".articles").empty();
           $(".loading").show();
@@ -117,7 +117,6 @@
         };
 
         $.ajax(settings).done(function (response) {
-          console.log(response.articles);
           response.articles.forEach((article) => {
             appendArticle(article);
           });
